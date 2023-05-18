@@ -60,27 +60,35 @@ PROFILE_PIC = Image.open(profile_pic)
 # --- HERO SECTION ---
 col1, col2 = st.columns(2)
 with col1:
-    lang1 = st.button('English')
-    if lang1:
+    lang = st.button('English')
+    if lang:
         language = 'en'
+        PAGE_TITLE = page_title(language)
+        ROLE = role(language)
     st.image(PROFILE_PIC, width=330)
     st_lottie(py_anime, height=200, key='coding')
 
 with col2:
-    result = st.button('Portuguese')
-    if result:
+    lang = st.button('Portuguese')
+    if lang:
         language = 'pt'
+        PAGE_TITLE = page_title(language)
+        ROLE = role(language)
+    else:
+        language = 'en'
+        
     st.write('\n'*2)
     st.header(NAME)
     st.subheader(ROLE)
     st.markdown(DESCRIPTION)
+    st.write('📫', EMAIL)
     # st.download_button(
     #     label=' 📄 Download Resume',
     #     data=PDFbyte,
     #     file_name=resume_file.name,
     #     mime='application/octet-stream',
     # )
-    st.write('📫', EMAIL)
+    
 
 # --- SOCIAL LINKS ---
 st.write('\n')
