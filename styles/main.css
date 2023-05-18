@@ -26,6 +26,12 @@ button:hover {
     border: white !important;
 }
 
+button:active{
+    color: #363bd3 !important;
+    text-decoration: none;
+    border: white !important;
+}
+
 ul {list-style-type: none;}
 
 hr {

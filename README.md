@@ -31,7 +31,6 @@ streamlit-lottie==0.0.3
 ## Run the app
 Terminal
 ```
-# vanilla terminal
 streamlit run app.py
 ```
 
