@@ -3,10 +3,10 @@ Create a digital resume in minutes with Python and Streamlit. In this tutorial, 
 
 Feel free to use this template and adjust it to your needs & linking.<br>
 
-💡 **The website design is inspired by [@divanov11](https://github.com/Marcelo-Peres)** 💡 <br>
+<!-- 💡 **The website design is inspired by [@divanov11](https://github.com/Marcelo-Peres)** 💡 <br>
 Find his:
 - repository here:https://github.com/Marcelo-Peres/mp-pic.git
-<!-- - YouTube video here: https://youtu.be/clwpf3VwCZQ -->
+- YouTube video here: https://youtu.be/clwpf3VwCZQ -->
 
 ## Live Demo
 👉 **https://resume.pythonandvba.com/**
