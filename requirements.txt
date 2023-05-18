@@ -1,4 +1,3 @@
-pandas
 Pillow==9.2.0
 streamlit==1.12.0
 streamlit-lottie==0.0.3
