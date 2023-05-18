@@ -8,7 +8,7 @@ import streamlit as st, json, requests, os, shutil, pandas as pd
 current_dir = Path(__file__).parent if '__file__' in locals() else Path.cwd()
 css_file = current_dir / 'styles' / 'main.css'
 resume_file = current_dir / 'assets' / 'CV.pdf'
-profile_pic = current_dir / 'assets' / 'mp-pic-01.png'
+profile_pic = current_dir / 'assets' / 'mp-pic.png'
 pycache_job = current_dir / 'jobs' / '__pycache__'
 pycache_resume = current_dir / 'resume_data' / '__pycache__'
 py_anime = 'https://assets5.lottiefiles.com/packages/lf20_2znxgjyt.json'
