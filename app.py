@@ -18,7 +18,7 @@ print(current_dir)
 
 if os.path.exists(pycache_resume):
     shutil.rmtree(pycache_resume)
-@st.cache
+
 def load_lottie_url(url):
     r = requests.get(url)
     if r.status_code != 200:
@@ -44,9 +44,7 @@ SOCIAL_MEDIA = social_media
 #     '🏆 MyToolBelt - Custom MS Excel add-in to combine Python & Excel': 'https://pythonandvba.com/mytoolbelt/',
 # }
 
-
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
-
 
 # --- LOAD CSS, PDF & PROFIL PIC ---
 with open(css_file) as f:
