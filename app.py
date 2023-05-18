@@ -4,6 +4,7 @@ from PIL import Image
 from streamlit_lottie import st_lottie
 import streamlit as st, json, requests, os, shutil
 
+
 language = 'en'
 
 # --- PATH SETTINGS ---
@@ -17,7 +18,7 @@ print(current_dir)
 
 # if os.path.exists(pycache_resume):
 #     shutil.rmtree(pycache_resume)
-
+@st.cache
 def load_lottie_url(url):
     r = requests.get(url)
     if r.status_code != 200:

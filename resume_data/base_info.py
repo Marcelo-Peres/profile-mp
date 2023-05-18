@@ -1,3 +1,6 @@
+import streamlit as st
+
+@st.cache(allow_output_mutation=True)
 def page_title(info:str)-> str:
     if info == 'en':
         return 'Profile | Marcelo Peres'
@@ -9,6 +12,7 @@ def page_title(info:str)-> str:
 page_icon = ':wave:'
 name = 'Marcelo Peres'
 
+@st.cache(allow_output_mutation=True)
 def role(info:str)-> str:
     if info == 'en':
         return 'Data Engineer & Analyst Professional'
@@ -29,6 +33,7 @@ social_media = {
     'GitHub': 'https://github.com/Marcelo-Peres'
 }
 
+@st.cache(allow_output_mutation=True)
 def qualification(info:str)-> str:
     if info == 'en':
         return '## Experience & Qualifications'
@@ -37,6 +42,7 @@ def qualification(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def qualification_info(info:str)-> str:
     if info == 'en':
         return '''
@@ -55,6 +61,7 @@ def qualification_info(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def skill(info:str)-> str:
     if info == 'en':
         return '## Hard Skills'
@@ -63,6 +70,7 @@ def skill(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def skill_info(info:str)-> str:
     if info == 'en':
         return '''
@@ -79,6 +87,7 @@ def skill_info(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_header(info:str)-> str:
     if info == 'en':
         return '## Work Experience'
@@ -87,6 +96,7 @@ def job_header(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t03(info:str)-> str:
     if info == 'en':
         return '#### 🚧 Data Engineer | A3Data'
@@ -95,6 +105,7 @@ def job_t03(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t03_time(info:str)-> str:
     if info == 'en':
         return '##### Dec 2022 - Mar 2023 | 04 months'
@@ -103,6 +114,7 @@ def job_t03_time(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t03_info(info:str)-> str:
     if info == 'en':
         return '''<div style="text-align: justify;">
@@ -139,6 +151,7 @@ Responsável por criar ferramentas de interação na Plataforma
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t02(info:str)-> str:
     if info == 'en':
         return '#### 🚧 Data Engineer Consultant | Via Consulting'
@@ -147,6 +160,7 @@ def job_t02(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t02_time(info:str)-> str:
     if info == 'en':
         return '##### Apr 2022 - Sep 2022 | 06 months'
@@ -155,6 +169,7 @@ def job_t02_time(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t02_info(info:str)-> str:
     if info == 'en':
         return '''<div style="text-align: justify;">\n
@@ -213,6 +228,7 @@ A ideia do projeto é uma campanha que dá suporte as pontuações dos consultor
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t01(info:str)-> str:
     if info == 'en':
         return '#### 🚧 AWS & BI Consultant | BI4all'
@@ -221,6 +237,7 @@ def job_t01(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t01_time(info:str)-> str:
     if info == 'en':
         return '##### Jul 2021 - May 2022 | 11 months'
@@ -229,6 +246,7 @@ def job_t01_time(info:str)-> str:
     else:
         None
 
+@st.cache(allow_output_mutation=True)
 def job_t01_info(info:str)-> str:
     if info == 'en':
         return '''<div style="text-align: justify;">\n
