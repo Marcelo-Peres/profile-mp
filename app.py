@@ -11,12 +11,12 @@ current_dir = Path(__file__).parent if '__file__' in locals() else Path.cwd()
 css_file = current_dir / 'styles' / 'main.css'
 # resume_file = current_dir / 'assets' / 'CV.pdf'
 profile_pic = current_dir / 'assets' / 'mp_pic.png'
-pycache_resume = current_dir / 'resume_data' / '__pycache__'
+# pycache_resume = current_dir / 'resume_data' / '__pycache__'
 py_anime = 'https://assets5.lottiefiles.com/packages/lf20_2znxgjyt.json'
 print(current_dir)
 
-if os.path.exists(pycache_resume):
-    shutil.rmtree(pycache_resume)
+# if os.path.exists(pycache_resume):
+#     shutil.rmtree(pycache_resume)
 
 def load_lottie_url(url):
     r = requests.get(url)
