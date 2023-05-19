@@ -4,13 +4,13 @@ from PIL import Image
 from streamlit_lottie import st_lottie
 import streamlit as st, json, requests, os, shutil
 
-
 language = 'en'
 
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if '__file__' in locals() else Path.cwd()
 css_file = current_dir / 'styles' / 'main.css'
-# resume_file = current_dir / 'assets' / 'CV.pdf'
+resume_en = current_dir / 'assets' / 'Profile-MP-en.pdf'
+resume_pt = current_dir / 'assets' / 'Profile-MP-pt.pdf'
 profile_pic = current_dir / 'assets' / 'mp_pic.png'
 pycache_resume = current_dir / 'resume_data' / '__pycache__'
 py_anime = 'https://assets5.lottiefiles.com/packages/lf20_2znxgjyt.json'
@@ -49,45 +49,70 @@ st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 # --- LOAD CSS, PDF & PROFIL PIC ---
 with open(css_file) as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
-# with open(resume_file, 'rb') as pdf_file:
-#     PDFbyte = pdf_file.read()
 
 PROFILE_PIC = Image.open(profile_pic)
 
-# lang1 =
-
 # --- HERO SECTION ---
+bt1, bt2 = st.columns([.5,1])
 col1, col2 = st.columns(2)
-with col1:
-    lang = st.button('English')
-    if lang:
+        
+with bt1:
+    lang1 = st.button('English')
+
+with bt2:
+    lang2 = st.button('Portuguese')
+
+with col2:
+    if lang1 == lang2:
         language = 'en'
         PAGE_TITLE = page_title(language)
         ROLE = role(language)
-    st.image(PROFILE_PIC, width=330)
-    st_lottie(py_anime, height=200, key='coding')
-
-with col2:
-    lang = st.button('Portuguese')
-    if lang:
+        resume_file = resume_en
+        st.write('\n'*2)
+        st.header(NAME)
+        st.subheader(ROLE)
+        st.markdown(DESCRIPTION)
+        st.write('📫', EMAIL)
+    elif lang1:
+        language = 'en'
+        PAGE_TITLE = page_title(language)
+        ROLE = role(language)
+        resume_file = resume_en
+        with open(resume_en, 'rb') as pdf_file:
+            PDFbyte = pdf_file.read()
+        st.write('\n'*2)
+        st.header(NAME)
+        st.subheader(ROLE)
+        st.markdown(DESCRIPTION)
+        st.write('📫', EMAIL)
+        st.download_button(
+            label=' 📄 Download Resume',
+            data=PDFbyte,
+            file_name=resume_file.name,
+            mime='application/octet-stream',
+        )
+    elif lang2:
         language = 'pt'
         PAGE_TITLE = page_title(language)
         ROLE = role(language)
-    else:
-        language = 'en'
-        
-    st.write('\n'*2)
-    st.header(NAME)
-    st.subheader(ROLE)
-    st.markdown(DESCRIPTION)
-    st.write('📫', EMAIL)
-    # st.download_button(
-    #     label=' 📄 Download Resume',
-    #     data=PDFbyte,
-    #     file_name=resume_file.name,
-    #     mime='application/octet-stream',
-    # )
-    
+        resume_file = resume_pt
+        with open(resume_pt, 'rb') as pdf_file:
+            PDFbyte = pdf_file.read()
+        st.write('\n'*2)
+        st.header(NAME)
+        st.subheader(ROLE)
+        st.markdown(DESCRIPTION)
+        st.write('📫', EMAIL)
+        st.download_button(
+            label=' 📄 Download CV',
+            data=PDFbyte,
+            file_name=resume_file.name,
+            mime='application/octet-stream',
+        )
+
+with col1:
+    st.image(PROFILE_PIC, width=330)
+    st_lottie(py_anime, height=200, key='coding')
 
 # --- SOCIAL LINKS ---
 st.write('\n')
